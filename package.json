@@ -7,7 +7,7 @@
     "dev": "vite --port 3000",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "serve": "node server/index.js"
+    "build": "vite build"
   },
   "dependencies": {
     "@fontsource/ibm-plex-sans": "^5.1.0",
