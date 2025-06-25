@@ -63,7 +63,7 @@ export default {
           name: member.name.split(' ')[0],
           baked: member.trusted_metadata?.baked,
           organization: orgs.organizations.find((org) => org.organization_id === member.organization_id)?.organization_name,
-        })).sort((a, b) => b.baked - a.baked);
+        })).sort((a, b) => parseInt(b.baked || '0') - parseInt(a.baked || '0'));
         const filteredLeaderboard = leaderboard.filter((member) => member.baked !== undefined);
         return new Response(JSON.stringify({ leaderboard: filteredLeaderboard }), {
           headers: DEFAULT_HEADERS,
