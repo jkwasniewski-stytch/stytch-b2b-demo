@@ -64,7 +64,8 @@ export default {
           baked: member.trusted_metadata?.baked,
           organization: orgs.organizations.find((org) => org.organization_id === member.organization_id)?.organization_name,
         })).sort((a, b) => b.baked - a.baked);
-        return new Response(JSON.stringify({ leaderboard }), {
+        const filteredLeaderboard = leaderboard.filter((member) => member.baked !== undefined);
+        return new Response(JSON.stringify({ leaderboard: filteredLeaderboard }), {
           headers: DEFAULT_HEADERS,
         });
       } catch (err: any) {
