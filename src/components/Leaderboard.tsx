@@ -92,7 +92,7 @@ export const Leaderboard: React.FC = () => {
                   fontWeight: 'bold',
                   color: '#495057'
                 }}>
-                  Organization
+                  Team
                 </th>
                 <th style={{ 
                   padding: '12px 16px', 

@@ -190,7 +190,7 @@ export const Dashboard: React.FC = () => {
           
           {promotionResponse && (
             <div>
-              <h3 style={{ margin: '20px 0 0 0', color: '#333' }}>You are now a {promotionResponse.role || 'nobody'}</h3>
+              <h3 style={{ margin: '20px 0 0 0', color: '#333' }}>You are a {promotionResponse.role || 'nobody'}</h3>
             </div>
           )}
 

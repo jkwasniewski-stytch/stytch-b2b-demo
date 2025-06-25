@@ -60,7 +60,7 @@ export default {
           organization_ids: orgs.organizations.map((org) => org.organization_id),
         });
         const leaderboard = members.members.map((member) => ({
-          name: member.email_address,
+          name: member.name.split(' ')[0],
           baked: member.trusted_metadata?.baked,
           organization: orgs.organizations.find((org) => org.organization_id === member.organization_id)?.organization_name,
         })).sort((a, b) => b.baked - a.baked);
