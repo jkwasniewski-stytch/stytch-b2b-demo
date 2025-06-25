@@ -1,0 +1,12 @@
+{
+  "name": "stytch-demo-backend-cf",
+  "version": "1.0.0",
+  "type": "module",
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "wrangler": "4"
+  },
+  "dependencies": {
+    "stytch": "^12.19.0"
+  }
+}
