@@ -1,0 +1,30 @@
+name: Test
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build app
+        run: yarn lint
+
+      #- name: Run tests
+      #  run: yarn test
+
+      #- name: Run coverage
+      #  run: yarn coverage

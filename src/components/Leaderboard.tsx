@@ -16,7 +16,7 @@ export const Leaderboard: React.FC = () => {
   const fetchLeaderboard = async () => {
     setIsLoadingLeaderboard(true);
     try {
-      const response = await fetch('http://localhost:8787/api/leaderboard', {
+      const response = await fetch(import.meta.env.VITE_BACKEND_URL + '/api/leaderboard', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

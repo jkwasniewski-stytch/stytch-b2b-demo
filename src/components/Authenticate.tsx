@@ -15,7 +15,7 @@ export const Authenticate = (): JSX.Element => {
       "https://telemetry.stytch.com/submit",
     );
     // Add to backend call to validate telemetry id
-    const response = await fetch("http://localhost:8787/api/validate", {
+    const response = await fetch(import.meta.env.VITE_BACKEND_URL + "/api/validate", {
       method: "POST",
       body: JSON.stringify({ telemetryId }),
     });

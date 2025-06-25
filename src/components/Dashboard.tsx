@@ -29,7 +29,7 @@ export const Dashboard: React.FC = () => {
     
     setIsFeeding(true);
     try {
-      const response = await fetch('http://localhost:8787/api/feed', {
+      const response = await fetch(import.meta.env.VITE_BACKEND_URL + '/api/feed', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ export const Dashboard: React.FC = () => {
     setIsRequestingPromotion(true);
     setPromotionResponse(null); // Clear previous response
     try {
-      const response = await fetch('http://localhost:8787/api/promote', {
+      const response = await fetch(import.meta.env.VITE_BACKEND_URL + '/api/promote', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
