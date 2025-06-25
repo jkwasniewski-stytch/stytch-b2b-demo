@@ -1,5 +1,5 @@
 {
-  "name": "stytch-demo-backend",
+  "name": "stytch-b2b-demo",
   "main": "src/index.ts",
   "compatibility_date": "2024-05-01",
   "vars": {
