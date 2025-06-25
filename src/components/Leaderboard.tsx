@@ -101,7 +101,7 @@ export const Leaderboard: React.FC = () => {
                   fontWeight: 'bold',
                   color: '#495057'
                 }}>
-                  Cookies Baked
+                  Birds Fed
                 </th>
               </tr>
             </thead>
