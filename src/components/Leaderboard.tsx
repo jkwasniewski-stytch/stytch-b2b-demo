@@ -42,7 +42,7 @@ export const Leaderboard: React.FC<{ limit: number }> = ({ limit }) => {
   // Fetch leaderboard on component mount
   useEffect(() => {
     fetchLeaderboard();
-  }, []);
+  }, [limit]);
 
   return (
     <div style={{ marginTop: '40px', textAlign: 'center' }}>
