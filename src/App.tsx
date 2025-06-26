@@ -41,7 +41,7 @@ export const App = () => {
             <Route path="/settings" element={<Settings />} />
             <Route path="/sso" element={<SSO />} />
             <Route path="/scim" element={<SCIM />} />
-            <Route path="/leaderboard" element={<Leaderboard />} />
+            <Route path="/leaderboard" element={<Leaderboard limit={100} />} />
           </Route>
         </Routes>
       </div>

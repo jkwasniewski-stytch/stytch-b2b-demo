@@ -104,7 +104,7 @@ export const JoinOrganization: React.FC = () => {
           </button>
         </div>
       </div>
-      <Leaderboard />
+      <Leaderboard limit={5} />
     </div>
   );
 };

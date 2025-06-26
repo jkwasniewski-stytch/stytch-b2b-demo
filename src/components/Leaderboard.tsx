@@ -9,14 +9,14 @@ const getCookie = (name: string) => {
   return cookie[name];
 };
 
-export const Leaderboard: React.FC = () => {
+export const Leaderboard: React.FC<{ limit: number }> = ({ limit }) => {
   const [leaderboardData, setLeaderboardData] = useState<any[]>([]);
   const [isLoadingLeaderboard, setIsLoadingLeaderboard] = useState(false);
 
   const fetchLeaderboard = async () => {
     setIsLoadingLeaderboard(true);
     try {
-      const response = await fetch(import.meta.env.VITE_BACKEND_URL + '/api/leaderboard', {
+      const response = await fetch(import.meta.env.VITE_BACKEND_URL + `/api/leaderboard?limit=${limit}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
