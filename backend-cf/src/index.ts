@@ -51,6 +51,7 @@ export default {
 
 
     if (url.pathname === '/api/leaderboard' && request.method === 'GET') {
+      const limit = parseInt(url.searchParams.get('limit') || '5');
       try {
         const orgs = await stytchClient.organizations.search({
           limit: 10,
@@ -60,11 +61,11 @@ export default {
           organization_ids: orgs.organizations.map((org) => org.organization_id),
         });
         const leaderboard = members.members.map((member) => ({
-          name: member.name.split(' ')[0],
+          name: `${member.name.split(' ')[0]} ${member.name.split(' ')[1][0]}.`,
           baked: member.trusted_metadata?.baked,
           organization: orgs.organizations.find((org) => org.organization_id === member.organization_id)?.organization_name,
         })).sort((a, b) => parseInt(b.baked || '0') - parseInt(a.baked || '0'));
-        const filteredLeaderboard = leaderboard.filter((member) => member.baked !== undefined);
+        const filteredLeaderboard = leaderboard.filter((member) => member.baked !== undefined).slice(0, limit);
         return new Response(JSON.stringify({ leaderboard: filteredLeaderboard }), {
           headers: DEFAULT_HEADERS,
         });
